@@ -6,6 +6,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="is-preload">
@@ -14,8 +15,8 @@
 	<header id="header">
 		<div class="inner">
 			<a href="#" class="image avatar"><img src="images/profile-pic.png" alt="" /></a>
-			<h1>Hi, I'm<strong> Shivlal Sharma</strong>, a Python Developer, MERN Stack Developer, an OpenSource
-				Contributor and an Undergraduate student at SALITER, Ahmedabad<br />
+			<h1>Hi, I'm<strong> Shivlal Sharma</strong>, Python Developer, MERN Stack Developer, an OpenSource
+				Contributor and an Undergraduate CS student at SALITER, Ahmedabad<br />
 				<br />
 		</div>
 	</header>
@@ -26,23 +27,24 @@
 		<!-- One -->
 		<section id="one">
 			<header class="major">
-				<h2></h2>My Interests<br />
+				<h2>About Me<br />
 				</h2>
 			</header>
-			<p> When I was in my first year of college, I started my programming journey with Python. I chose Python
-				because It is beginner-friendly, wast use cases like AI, ML, Web Development, Game Development, etc.
-
+			<p>
+				Hi, I'm Shivlal Sharma, a passionate student who enjoys learning new things, solving problems and also
+				loves developing cool new things.
+				<br />
+				<br />
+				I'm well experianced in data structures and algorithms with Python and also capable to develope and
+				design interactive React apps. Also got my hands dirty in new trending techs like <u>BlockChain</u>,
+				<u>Data Science</u>, <u>AI</u>, <u>ML</u>
+				Created few
+				BlockChain projects based on <u>Etherium</u> smart contracts.
 			</p>
 			<header class="major">
-				<h2>My Skills</h2>
+				<h2>Skills</h2>
 			</header>
-			<p> When I was in my first year of college, I started my programming journey with Python. I chose Python
-				because It is beginner-friendly, wast use cases like AI, ML, Web Development, Game Development, etc.
-
-			</p>
-			<ul class="actions">
-				<li><a href="#" class="button">Learn More</a></li>
-			</ul>
+			<canvas id="myChart" width="400" height="400"></canvas>
 		</section>
 
 		<!-- Two -->
@@ -50,8 +52,8 @@
 			<h2>Projects</h2>
 			<div class="row">
 				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/fulls/ethvoter.png" class="image fit thumb"><img src="images/thumbs/crypto.png"
-							alt="" /></a>
+					<a href="images/fulls/ethvoter.png" class="image fit thumb" aos="zoom-in"><img
+							src="images/thumbs/crypto.png" alt="" /></a>
 					<h3>EthVoter</h3>
 					<p>EthVoter is blockchain based Voting system created for making election process secure,
 						transparent and trustworthy. I used
@@ -61,6 +63,8 @@
 						private
 						blockchain network and transactions.
 					</p>
+					<a href="https://github.com/sshiv5768/EthVoter" class="icon brands fa-github"><span
+							class="label">Github</span></a>
 				</article>
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/fulls/rpypro.png" class="image fit thumb"><img src="images/thumbs/rpypro.jpg"
@@ -73,6 +77,8 @@
 						<strong>Axios</strong> for taking json
 						response from the API endpoints.
 					</p>
+					<a href="https://github.com/sshiv5768/sdc-saliter.github.io" class="icon brands fa-github"><span
+							class="label">Github</span></a>
 				</article>
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/fulls/Ste.PNG" class="image fit thumb"><img src="images/thumbs/Stock_price.png"
@@ -80,6 +86,8 @@
 					<h3>Stocky</h3>
 					<p>This python project gives graph visualizations of stock prices of any company. It uses yfinance
 						library for data and streamlit for visualization.</p>
+					<a href="https://github.com/sshiv5768/Stock-Price-Selector" class="icon brands fa-github"><span
+							class="label">Github</span></a>
 				</article>
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/Chat.png"
@@ -87,21 +95,10 @@
 					<h3>Chatlify</h3>
 					<p>Created with HTML, CSS, NodeJs, and Socket.io. Used sockets to send and receive messages. Added
 						notification sound when a new user enters the chat room</p>
-				</article>
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-					<h3>Nunc enim commodo aliquet</h3>
-					<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-				</article>
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-					<h3>Risus ornare lacinia</h3>
-					<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+					<a href="https://github.com/sshiv5768/" class="icon brands fa-github"><span
+							class="label">Github</span></a>
 				</article>
 			</div>
-			<ul class="actions">
-				<li><a href="#" class="button">Full Portfolio</a></li>
-			</ul>
 		</section>
 
 		<!-- Three -->
@@ -169,6 +166,45 @@
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
+	<script>
+		var ctx = document.getElementById('myChart');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: ['C++', 'Python', 'JavaScript', 'HTML', 'CSS', 'React'],
+				datasets: [{
+					label: 'My SkillChart',
+					axis: 'y',
+					data: [8, 10, 8, 7, 5, 8],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.2)',
+						'rgba(54, 162, 235, 0.2)',
+						'rgba(255, 206, 86, 0.2)',
+						'rgba(75, 192, 192, 0.2)',
+						'rgba(153, 102, 255, 0.2)',
+						'rgba(255, 159, 64, 0.2)'
+					],
+					borderColor: [
+						'rgba(255, 99, 132, 1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)',
+						'rgba(255, 159, 64, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				indexAxis: 'y',
+				scales: {
+					y: {
+						beginAtZero: true
+					}
+				}
+			}
+		});
+	</script>
 	<script src="assets/js/main.js"></script>
 
 </body>
